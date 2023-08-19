@@ -1,5 +1,4 @@
 import styles from './NavBar.module.scss';
-import Container from 'react-bootstrap/esm/Container';
 
 import logo from '../../../assets/logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

@@ -1,11 +1,15 @@
 import { createStore, combineReducers } from 'redux';
 import initialState from './initialState';
+import carsReducer from './carsRedux';
 
-const subreducers = {};
+const reducers = {
+  cars: carsReducer,
+};
 
-const reducer = combineReducers(subreducers);
+const combinedReducers = combineReducers(reducers);
+
 const store = createStore(
-  reducer,
+  combinedReducers,
   initialState,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
