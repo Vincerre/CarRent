@@ -5,6 +5,7 @@ import NavBar from './components/layout/NavBar/NavBar';
 
 const App = () => (
   <>
+    {/* <NavBar /> */}
     <Hero />
     <MainLayout></MainLayout>
   </>

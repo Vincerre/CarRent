@@ -11,11 +11,12 @@ $textFont: 'Rubik', sans-serif;
 
 $logoSize: 30px;
 $navbarSize: 24px;
-$headingSize: 24px;
+$sloganSize: 3vw;
+$headingSize: 6vw;
 $textSize: 24px;
 $descriptionSize: 18px;
 
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
-  font-family: $textFont;
+  font-family: $headerFont;
 }
