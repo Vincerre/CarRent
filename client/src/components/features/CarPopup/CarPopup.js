@@ -73,7 +73,7 @@ const CarPopup = ({
               }
             />
           </div>
-          <div className={styles.description}>
+          <div className={styles.carInfo}>
             <h1>{brand}</h1>
             <h3>{model}</h3>
             <div className={styles.bottomBox}>
@@ -110,16 +110,41 @@ const CarPopup = ({
                 </div>
               </div>
               <div className={styles.rightColumn}>
+                <div className={styles.description}>
+                  <h3>Details</h3>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Etiam ac sapien facilisis, maximus sem in, laoreet metus. In
+                    sed dui dolor. Donec in facilisis diam, vitae bibendum nisi.
+                    Nullam gravida ipsum a luctus iaculis. Nullam lectus mi,
+                    fringilla eget ornare id, auctor sed urna. Vestibulum
+                    ullamcorper, augue vitae congue bibendum, purus augue mattis
+                    elit, id pulvinar sem sem non purus. Quisque sit amet
+                    ultricies velit, vel pretium lorem. Donec ut purus non nisl
+                    cursus bibendum sit amet eu diam.
+                  </p>
+                </div>
                 <div className={styles.priceBox}>
-                  <Button onClick={subtractDays}>
-                    <FontAwesomeIcon icon={faMinus} />
-                  </Button>
-                  {days}
-                  <Button onClick={addDays}>
-                    <FontAwesomeIcon icon={faPlus} />
-                  </Button>
-                  {totalPrice}
-                  <FontAwesomeIcon icon={faDollar} />
+                  <div className={styles.daysPicker}>
+                    <h5>Days</h5>
+                    <div>
+                      <Button onClick={subtractDays}>
+                        <FontAwesomeIcon icon={faMinus} />
+                      </Button>
+                      <p>{days}</p>
+                      <Button onClick={addDays}>
+                        <FontAwesomeIcon icon={faPlus} />
+                      </Button>
+                    </div>
+                  </div>
+                  <div className={styles.price}>
+                    <h5>Total price:</h5>
+                    {totalPrice}
+                    <FontAwesomeIcon icon={faDollar} />
+                  </div>
+                  <div className={styles.addToCart}>
+                    <Button>Add to Cart</Button>
+                  </div>
                 </div>
               </div>
             </div>
