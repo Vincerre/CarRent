@@ -6,22 +6,31 @@ import { getAllCategories } from '../../../redux/categoriesRedux';
 import { useSelector } from 'react-redux';
 
 import CarBox from '../../common/CarBox/CarBox';
-import SwipeableComponent from '../../features/SwipeableComponent/SwipeableComponent';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 const CarCatalogue = () => {
   const cars = useSelector(getAllCars);
   const categories = useSelector(getAllCategories);
-  console.log(cars);
 
   const [itemsPerRow, setItemsPerRow] = useState(3);
   const [activePage, setActivePage] = useState(0);
-  const [activeCategory, setActiveCategory] = useState('standard');
+  const [activeCategory, setActiveCategory] = useState('all');
   const [viewport, setViewport] = useState(window.innerWidth);
   const [fade, setFade] = useState(false);
   const [rows, setRows] = useState(2);
 
   const categoryCars = cars.filter((car) => car.category === activeCategory);
-  const pagesCount = Math.ceil(categoryCars.length / (itemsPerRow * rows));
+
+  let pagesCount = 0;
+  if (activeCategory === 'all') {
+    pagesCount = Math.ceil(cars.length / (itemsPerRow * rows));
+  } else {
+    pagesCount = Math.ceil(categoryCars.length / (itemsPerRow * rows));
+  }
+
+  console.log('count', activePage);
 
   const updateItemsPerRow = () => {
     if (viewport >= 1400) {
@@ -32,10 +41,10 @@ const CarCatalogue = () => {
       setRows(3);
     } else if (viewport >= 992) {
       setItemsPerRow(2);
-      setRows(4);
+      setRows(2);
     } else if (viewport < 767) {
       setItemsPerRow(1);
-      setRows(4);
+      setRows(2);
     }
   };
 
@@ -59,15 +68,18 @@ const CarCatalogue = () => {
     setFade(false);
   };
 
-  const handleSwipeLeft = () => {
+  const nextPage = () => {
     if (activePage < pagesCount - 1) {
-      setActivePage((prevState) => prevState.activePage + 1);
+      setActivePage(activePage + 1);
+    } else {
+      setActivePage(0);
     }
   };
-
-  const handleSwipeRight = () => {
-    if (activePage > 0) {
-      setActivePage((prevState) => prevState.activePage - 1);
+  const prevPage = () => {
+    if (activePage === 0) {
+      setActivePage(pagesCount - 1);
+    } else {
+      setActivePage(activePage - 1);
     }
   };
 
@@ -85,10 +97,18 @@ const CarCatalogue = () => {
   }
 
   return (
-    <SwipeableComponent
-      leftAction={handleSwipeRight}
-      rightAction={handleSwipeLeft}>
+    <>
       <div className={styles.root}>
+        {dots.length > 1 && (
+          <>
+            <button className={styles.rightArrow} onClick={nextPage}>
+              <FontAwesomeIcon icon={faArrowRight}></FontAwesomeIcon>
+            </button>
+            <button className={styles.leftArrow} onClick={prevPage}>
+              <FontAwesomeIcon icon={faArrowLeft}></FontAwesomeIcon>
+            </button>
+          </>
+        )}
         <div className="container">
           <div className={styles.panelBar}>
             <div className="row no-gutters align-items-end">
@@ -115,24 +135,42 @@ const CarCatalogue = () => {
               </div>
             </div>
           </div>
-          <div
-            className={`${fade ? styles['fade-out'] : ''} ${
-              styles['products-view']
-            } row`}>
-            {categoryCars
-              .slice(
-                activePage * itemsPerRow * rows,
-                (activePage + 1) * itemsPerRow * rows
-              )
-              .map((item) => (
-                <div key={item.id} className={`col-${12 / itemsPerRow}`}>
-                  <CarBox {...item} />
-                </div>
-              ))}
-          </div>
+          {activeCategory === 'all' ? (
+            <div
+              className={`${fade ? styles['fade-out'] : ''} ${
+                styles['products-view']
+              } row`}>
+              {cars
+                .slice(
+                  activePage * itemsPerRow * rows,
+                  (activePage + 1) * itemsPerRow * rows
+                )
+                .map((item) => (
+                  <div key={item.id} className={`col-${12 / itemsPerRow}`}>
+                    <CarBox {...item} />
+                  </div>
+                ))}
+            </div>
+          ) : (
+            <div
+              className={`${fade ? styles['fade-out'] : ''} ${
+                styles['products-view']
+              } row`}>
+              {categoryCars
+                .slice(
+                  activePage * itemsPerRow * rows,
+                  (activePage + 1) * itemsPerRow * rows
+                )
+                .map((item) => (
+                  <div key={item.id} className={`col-${12 / itemsPerRow}`}>
+                    <CarBox {...item} />
+                  </div>
+                ))}
+            </div>
+          )}
         </div>
       </div>
-    </SwipeableComponent>
+    </>
   );
 };
 

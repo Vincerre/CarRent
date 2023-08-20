@@ -6,7 +6,7 @@ import { faGear, faPerson, faDollar } from '@fortawesome/free-solid-svg-icons';
 
 const CarBox = ({ id, brand, model, gearbox, price, seats }) => {
   return (
-    <div className={styles.root}>
+    <div id="cars" className={styles.root}>
       <div className={styles.photo}>
         <div className={styles.content}>
           <Link to={id}>

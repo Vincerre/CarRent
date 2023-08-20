@@ -1,5 +1,6 @@
 const initialState = {
   categories: [
+    { id: 'all', name: 'All' },
     { id: 'standard', name: 'Standard' },
     { id: 'compact', name: 'Compact' },
     { id: 'mini', name: 'Mini' },
@@ -80,6 +81,7 @@ const initialState = {
     },
     {
       id: 'skoda-fabia',
+      brand: 'skoda',
       model: 'fabia',
       category: 'eco',
       gearbox: 'manual',
@@ -240,7 +242,7 @@ const initialState = {
     {
       id: 'audi-a3-sportback',
       brand: 'audi',
-      model: 'a3 sportback',
+      model: 'a3-sportback',
       category: 'compact',
       gearbox: 'manual',
       seats: 5,
