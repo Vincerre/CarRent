@@ -14,6 +14,8 @@ const CarCatalogue = () => {
   const cars = useSelector(getAllCars);
   const categories = useSelector(getAllCategories);
 
+  console.log(cars);
+
   const [itemsPerRow, setItemsPerRow] = useState(3);
   const [activePage, setActivePage] = useState(0);
   const [activeCategory, setActiveCategory] = useState('all');
@@ -22,15 +24,12 @@ const CarCatalogue = () => {
   const [rows, setRows] = useState(2);
 
   const categoryCars = cars.filter((car) => car.category === activeCategory);
-
   let pagesCount = 0;
   if (activeCategory === 'all') {
     pagesCount = Math.ceil(cars.length / (itemsPerRow * rows));
   } else {
     pagesCount = Math.ceil(categoryCars.length / (itemsPerRow * rows));
   }
-
-  console.log('count', activePage);
 
   const updateItemsPerRow = () => {
     if (viewport >= 1400) {
@@ -63,6 +62,7 @@ const CarCatalogue = () => {
   };
 
   const handleCategoryChange = (newCategory) => {
+    setActivePage(0);
     setFade(true);
     setActiveCategory(newCategory);
     setFade(false);
@@ -98,20 +98,10 @@ const CarCatalogue = () => {
 
   return (
     <>
-      <div className={styles.root}>
-        {dots.length > 1 && (
-          <>
-            <button className={styles.rightArrow} onClick={nextPage}>
-              <FontAwesomeIcon icon={faArrowRight}></FontAwesomeIcon>
-            </button>
-            <button className={styles.leftArrow} onClick={prevPage}>
-              <FontAwesomeIcon icon={faArrowLeft}></FontAwesomeIcon>
-            </button>
-          </>
-        )}
+      <div id="cars" className={styles.root}>
         <div className="container">
           <div className={styles.panelBar}>
-            <div className="row no-gutters align-items-end">
+            <div className="row no-gutters">
               <div className={`col-auto ${styles.heading}`}>
                 <h3>Our Cars</h3>
               </div>
@@ -140,6 +130,16 @@ const CarCatalogue = () => {
               className={`${fade ? styles['fade-out'] : ''} ${
                 styles['products-view']
               } row`}>
+              {dots.length > 1 && (
+                <>
+                  <button className={styles.rightArrow} onClick={nextPage}>
+                    <FontAwesomeIcon icon={faArrowRight}></FontAwesomeIcon>
+                  </button>
+                  <button className={styles.leftArrow} onClick={prevPage}>
+                    <FontAwesomeIcon icon={faArrowLeft}></FontAwesomeIcon>
+                  </button>
+                </>
+              )}
               {cars
                 .slice(
                   activePage * itemsPerRow * rows,
@@ -156,6 +156,16 @@ const CarCatalogue = () => {
               className={`${fade ? styles['fade-out'] : ''} ${
                 styles['products-view']
               } row`}>
+              {dots.length > 1 && (
+                <>
+                  <button className={styles.rightArrow} onClick={nextPage}>
+                    <FontAwesomeIcon icon={faArrowRight}></FontAwesomeIcon>
+                  </button>
+                  <button className={styles.leftArrow} onClick={prevPage}>
+                    <FontAwesomeIcon icon={faArrowLeft}></FontAwesomeIcon>
+                  </button>
+                </>
+              )}
               {categoryCars
                 .slice(
                   activePage * itemsPerRow * rows,

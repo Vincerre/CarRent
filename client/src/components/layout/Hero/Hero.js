@@ -14,7 +14,9 @@ const Hero = () => (
           </p>
         </h1>
         <div className={styles.slogan}>
-          <h3>Drive Your Way to Freedom, Rent a Car Today</h3>
+          <h3>
+            Drive Your Way to Freedom <p>Rent a Car Today</p>
+          </h3>
           <Button href={'#cars'}>Get vehicle here</Button>
         </div>
       </div>

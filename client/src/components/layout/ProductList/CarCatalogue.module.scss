@@ -1,4 +1,4 @@
-@import "../../../styles/settings.scss";
+@import '../../../styles/settings.scss';
 
 .root {
   position: relative;
@@ -6,32 +6,14 @@
   background: linear-gradient(135deg, rgba(20, 20, 20, 0.1), rgba(6, 6, 6, 0));
   backdrop-filter: blur(10px);
   border-radius: 20px;
-  border:1px solid rgba(8, 8, 8, 0.18);
+  border: 1px solid rgba(8, 8, 8, 0.18);
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
   padding: 5% 10%;
-  min-height: 70vh;
-  > button{
-    background: linear-gradient(135deg, rgba(20, 20, 20, 0.1), rgba(6, 6, 6, 0));
-    border-radius: 50%;
-    padding: 10px 15px;
-    font-size: 1.5rem;;
-  }
-  .rightArrow{
-    position: absolute;
-    top:50%;
-    right:10px;
-  }
-  .leftArrow{
-    position: absolute;
-    top:50%;
-    left: 10px;
-  }
 
- 
+
   .panelBar {
     margin-bottom: 30px;
     position: relative;
-   
 
     .heading {
       position: relative;
@@ -46,7 +28,7 @@
       }
 
       &::before {
-        content: "";
+        content: '';
         position: absolute;
         bottom: -4px;
         left: 0;
@@ -77,7 +59,7 @@
             &.active,
             &:hover {
               &::before {
-                content: "";
+                content: '';
                 position: absolute;
                 bottom: -4px;
                 left: 0;
@@ -126,13 +108,64 @@
       }
     }
   }
-  .products-view > * {
+  .products-view {
+    position: relative;
+    > button {
+      background: linear-gradient(
+        135deg,
+        rgba(20, 20, 20, 0.1),
+        rgba(6, 6, 6, 0)
+      );
+      border-radius: 50%;
+      padding: 0.5rem 1rem;
+      font-size: 1.5rem;
+    }
+    .rightArrow {
+      position: absolute;
+      width: auto;
+      top: 50%;
+      left: 100%;
+      transform: translate(0, -50%);
+      color: rgba(225, 220, 220, 0.606);
+      box-shadow: 0 0 5px 0 rgba(225, 220, 220, 0.606);
+    }
+    .leftArrow {
+      position: absolute;
+      width: auto;
+      top: 50%;
+      right: 100%;
+      transform: translate(0, -50%);
+      color: rgba(225, 220, 220, 0.606);
+      box-shadow: 0 0 5px 0 rgba(225, 220, 220, 0.606);
+    }
+    > * {
     opacity: 0;
     animation: $fade-in;
   }
+}
 
   .products-view.fade-out > * {
     animation: $fade-out;
+  }
+
+  @media (max-width: 1440px) {
+    .dots {
+      top: 70%;
+    }
+  }
+
+  @media (min-width: 720px) and (max-width: 1440px) {
+    
+    .panelBar {
+      > div {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      
+      .dots {
+        top: 90%;
+      }
+    }
   }
   @media (max-width: 720px) {
     .heading {
@@ -146,16 +179,20 @@
       }
     }
     .panelBar {
-
+      > div {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
       .dots {
-        top: 33px ;
+        top: 85%;
 
-        ul>li>a {
-          width: 17px ;
-          height: 17px ;
-          border-radius: 10px ;
+        ul > li > a {
+          width: 17px;
+          height: 17px;
+          border-radius: 10px;
           margin: 0 3px;
-       }
+        }
       }
     }
   }

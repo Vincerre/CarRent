@@ -37,7 +37,7 @@ const initialState = {
       gearbox: 'manual',
       seats: 5,
       price: 35,
-      airCon: true,
+      airCon: false,
     },
     {
       id: 'toyota-aygo',
@@ -107,7 +107,7 @@ const initialState = {
       gearbox: 'manual',
       seats: 5,
       price: 33,
-      airCon: true,
+      airCon: false,
     },
     {
       id: 'mercedes-a-class',
@@ -270,6 +270,10 @@ const initialState = {
       airCon: true,
     },
   ],
+  cart: {
+    products: [],
+  },
+  orders: {},
 };
 
 export default initialState;
