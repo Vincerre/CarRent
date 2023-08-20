@@ -1,8 +1,9 @@
 @import "../../../styles/settings.scss";
 
 .root {
+  margin: 10% 0;
   height: fit-content;
-  background: linear-gradient(135deg, rgba(39, 38, 38, 0.1), rgba(20, 20, 20, 0));
+  background: linear-gradient(135deg, rgba(20, 20, 20, 0.1), rgba(6, 6, 6, 0));
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-radius: 20px;
@@ -49,7 +50,7 @@
           font-weight: 600;
 
           a {
-            color: rgb(42, 42, 42);
+            color: rgb(72, 70, 70);
             position: relative;
             text-decoration: none;
             font-size: 1.5rem;

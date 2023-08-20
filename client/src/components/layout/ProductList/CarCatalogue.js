@@ -11,6 +11,7 @@ import SwipeableComponent from '../../features/SwipeableComponent/SwipeableCompo
 const CarCatalogue = () => {
   const cars = useSelector(getAllCars);
   const categories = useSelector(getAllCategories);
+  console.log(cars);
 
   const [itemsPerRow, setItemsPerRow] = useState(3);
   const [activePage, setActivePage] = useState(0);
@@ -20,20 +21,20 @@ const CarCatalogue = () => {
   const [rows, setRows] = useState(2);
 
   const categoryCars = cars.filter((car) => car.category === activeCategory);
-  const pagesCount = Math.ceil(categoryCars.length / (itemsPerRow * 2));
+  const pagesCount = Math.ceil(categoryCars.length / (itemsPerRow * rows));
 
   const updateItemsPerRow = () => {
-    if (viewport >= 1230) {
+    if (viewport >= 1400) {
       setItemsPerRow(4);
       setRows(2);
-    } else if (viewport >= 992) {
+    } else if (viewport >= 1120) {
       setItemsPerRow(3);
       setRows(3);
-    } else if (viewport >= 767) {
+    } else if (viewport >= 992) {
       setItemsPerRow(2);
       setRows(4);
     } else if (viewport < 767) {
-      setItemsPerRow(2);
+      setItemsPerRow(1);
       setRows(4);
     }
   };

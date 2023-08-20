@@ -79,8 +79,7 @@ const initialState = {
       airCon: true,
     },
     {
-      id: 'skoda-fabia', //--
-      brand: 'skoda',
+      id: 'skoda-fabia',
       model: 'fabia',
       category: 'eco',
       gearbox: 'manual',
@@ -90,7 +89,7 @@ const initialState = {
     },
     {
       id: 'volkswagen-tiguan',
-      brand: 'voolkswagen',
+      brand: 'volkswagen',
       model: 'tiguan',
       category: 'standard',
       gearbox: 'manual',
