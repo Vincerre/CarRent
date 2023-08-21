@@ -56,8 +56,6 @@ const CarPopup = ({
     }
   };
 
-  // useEffect(() => {}, [days]);
-
   return (
     <div className={styles.root}>
       <div className={styles.exit} onClick={closePopup}>

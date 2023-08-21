@@ -32,10 +32,10 @@ const CarCatalogue = () => {
   }
 
   const updateItemsPerRow = () => {
-    if (viewport >= 1400) {
+    if (viewport >= 1600) {
       setItemsPerRow(4);
       setRows(2);
-    } else if (viewport >= 1120) {
+    } else if (viewport >= 1220) {
       setItemsPerRow(3);
       setRows(3);
     } else if (viewport >= 992) {
@@ -99,7 +99,7 @@ const CarCatalogue = () => {
   return (
     <>
       <div id="cars" className={styles.root}>
-        <div className="container">
+        <div className="container-fluid">
           <div className={styles.panelBar}>
             <div className="row no-gutters">
               <div className={`col-auto ${styles.heading}`}>

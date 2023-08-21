@@ -12,11 +12,16 @@
   border: 1px solid rgba(8, 8, 8, 0.18);
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
   margin: 10px 0;
-  
+
   .photo {
     position: relative;
     padding: 5px 5px 100% 5px;
     overflow: hidden;
+    > div {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
     &:hover {
       .content {
         transform: scale(1.05);
@@ -28,17 +33,45 @@
         transition: 0.5s;
       }
     }
-    button{
-      background: transparent;
-      border: none;
+    button {
+      font-size: 1rem;
+      color:White;
+      background: linear-gradient(
+        135deg,
+        rgba(39, 38, 38, 0.1),
+        rgba(20, 20, 20, 0)
+      );
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-radius: 20px;
+      border: 1px solid rgba(6, 6, 6, 0.278);
+      box-shadow: 0 0 32px 0 rgba(66, 65, 65, 0.775);
+
+      width: 25%;
+      padding: 10px;
+      height: 50%;
+      &:hover{
+        transform: scale(1.1);
+        background-color: $primary;
+        box-shadow: 0 0 32px 0 rgba(145, 144, 144, 0.695);
+        transition: 0.5s;
+
+      }
+      &:not(:hover) {
+        .content {
+          transition: 0.5s;
+        }
+      }
+      
+     
     }
     img {
       position: absolute;
-      top: 0%;
+      top: 20%;
       left: 0%;
       object-fit: contain;
       width: 100%;
-      height: 100%;
+      height: 50%;
       &:hover {
         transform: scale(1.1);
         transition: 0.5s;
@@ -48,6 +81,7 @@
       }
     }
     .content {
+      width: 70%;
       text-align: center;
       padding: 20px;
       background: linear-gradient(
@@ -60,7 +94,7 @@
       border-radius: 20px;
       border: 1px solid rgba(8, 8, 8, 0.18);
       box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-     
+
       a {
         text-decoration: none;
       }
@@ -78,7 +112,7 @@
       }
     }
   }
-  .description{
+  .description {
     display: flex;
     flex-direction: row;
     position: absolute;
@@ -86,34 +120,33 @@
     font-size: 1rem;
     width: 100%;
     justify-content: space-between;
-    
-    svg{
+
+    svg {
       color: $primary;
       font-size: 1.5rem;
       width: 30%;
     }
-    .info{
+    .info {
       width: 100%;
     }
-    .gearBox{
+    .gearBox {
       margin-bottom: 10px;
     }
-    .seatBox{
+    .seatBox {
       margin-bottom: 10px;
     }
-    .priceBox{
+    .priceBox {
       display: flex;
       font-size: 3rem;
       width: 100%;
-      :last-child{
+      :last-child {
         font-size: 20px;
         display: flex;
         flex-direction: column;
-        svg{
+        svg {
           font-size: 2rem;
         }
       }
-      
     }
   }
 }

@@ -1,13 +1,12 @@
 import Hero from '../../layout/Hero/Hero';
-import CarCatalogue from '../../layout/ProductList/CarCatalogue';
-import { Container } from 'react-bootstrap';
+import CarCatalogue from '../../layout/CarCatalogue/CarCatalogue';
 
 const Home = () => (
   <>
     <Hero />
-    <Container>
+    <div className="container-fluid">
       <CarCatalogue />
-    </Container>
+    </div>
   </>
 );
 

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 
 import styles from './CarBox.module.scss';
@@ -20,6 +20,15 @@ const CarBox = ({
 }) => {
   const props = { id, brand, model, gearbox, price, seats, category, airCon };
   const [showPopup, setShowPopup] = useState(false);
+  const [popup, setPopup] = useState(true);
+
+  useEffect(() => {
+    if (window.innerWidth > 1500) {
+      setPopup(true);
+    } else {
+      setPopup(false);
+    }
+  }, [window.innerWidth]);
 
   const closePopup = () => {
     setShowPopup(false);
@@ -31,19 +40,22 @@ const CarBox = ({
   return (
     <div className={styles.root}>
       <div className={styles.photo}>
-        <div className={styles.content}>
-          <Link to={id}>
-            <h4>{brand}</h4>
-            <h5>{model}</h5>
-          </Link>
+        <div>
+          <div className={styles.content}>
+            <Link to={`car/${id}`}>
+              <h4>{brand}</h4>
+              <h5>{model}</h5>
+            </Link>
+          </div>
+          <button onClick={openPopup}>Quick View</button>
         </div>
-        <button onClick={openPopup}>
+        <Link to={`car/${id}`}>
           <img
             className={styles.image}
             alt={id}
             src={process.env.PUBLIC_URL + `/images/cars/${brand}-${model}.png`}
           />
-        </button>
+        </Link>
         <div className={styles.description}>
           <div className={styles.info}>
             <div className={styles.gearBox}>
@@ -64,7 +76,9 @@ const CarBox = ({
           </div>
         </div>
       </div>
+
       {showPopup &&
+        popup &&
         createPortal(
           <CarPopup {...props} closePopup={closePopup} />,
           document.body
