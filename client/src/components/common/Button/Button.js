@@ -1,14 +1,16 @@
 import React from 'react';
 import styles from './Button.module.scss';
+import { Link } from 'react-router-dom';
+
 // import PropTypes from 'prop-types';
 
-const Button = ({ children, href, onClick }) => {
-  let Comp = 'a';
+const Button = ({ children, to, onClick }) => {
+  let Comp = Link;
   if (onClick) {
     Comp = 'button';
   }
   return (
-    <Comp className={styles.button} href={href} onClick={onClick}>
+    <Comp className={styles.button} to={to} onClick={onClick}>
       {children}
     </Comp>
   );

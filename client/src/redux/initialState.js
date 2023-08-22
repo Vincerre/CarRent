@@ -25,6 +25,8 @@ const initialState = {
       model: 'corolla',
       category: 'standard',
       gearbox: 'automatic',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ac sapien facilisis, maximus sem in, laoreet metus. In sed dui dolor. Donec in facilisis diam, vitae bibendum nisi. Nullam gravida ipsum a luctus iaculis. Nullam lectus mi, fringilla eget ornare id, auctor sed urna. Vestibulum ullamcorper, augue vitae congue bibendum, purus augue mattis elit, id pulvinar sem sem non purus. Quisque sit amet ultricies velit, vel pretium lorem. Donec ut purus non nisl cursus bibendum sit amet eu diam.',
       seats: 5,
       price: 38,
       airCon: true,
@@ -35,6 +37,8 @@ const initialState = {
       model: 'astra',
       category: 'compact',
       gearbox: 'manual',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ac sapien facilisis, maximus sem in, laoreet metus. In sed dui dolor. Donec in facilisis diam, vitae bibendum nisi. Nullam gravida ipsum a luctus iaculis. Nullam lectus mi, fringilla eget ornare id, auctor sed urna. Vestibulum ullamcorper, augue vitae congue bibendum, purus augue mattis elit, id pulvinar sem sem non purus. Quisque sit amet ultricies velit, vel pretium lorem. Donec ut purus non nisl cursus bibendum sit amet eu diam.',
       seats: 5,
       price: 35,
       airCon: false,
@@ -45,6 +49,8 @@ const initialState = {
       model: 'aygo',
       category: 'mini',
       gearbox: 'manual',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ac sapien facilisis, maximus sem in, laoreet metus. In sed dui dolor. Donec in facilisis diam, vitae bibendum nisi. Nullam gravida ipsum a luctus iaculis. Nullam lectus mi, fringilla eget ornare id, auctor sed urna. Vestibulum ullamcorper, augue vitae congue bibendum, purus augue mattis elit, id pulvinar sem sem non purus. Quisque sit amet ultricies velit, vel pretium lorem. Donec ut purus non nisl cursus bibendum sit amet eu diam.',
       seats: 4,
       price: 33,
       airCon: true,
@@ -55,6 +61,8 @@ const initialState = {
       model: 'yaris',
       category: 'compact',
       gearbox: 'automatic',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ac sapien facilisis, maximus sem in, laoreet metus. In sed dui dolor. Donec in facilisis diam, vitae bibendum nisi. Nullam gravida ipsum a luctus iaculis. Nullam lectus mi, fringilla eget ornare id, auctor sed urna. Vestibulum ullamcorper, augue vitae congue bibendum, purus augue mattis elit, id pulvinar sem sem non purus. Quisque sit amet ultricies velit, vel pretium lorem. Donec ut purus non nisl cursus bibendum sit amet eu diam.',
       seats: 5,
       price: 31,
       airCon: true,
@@ -65,6 +73,8 @@ const initialState = {
       model: 'clio',
       category: 'eco',
       gearbox: 'manual',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ac sapien facilisis, maximus sem in, laoreet metus. In sed dui dolor. Donec in facilisis diam, vitae bibendum nisi. Nullam gravida ipsum a luctus iaculis. Nullam lectus mi, fringilla eget ornare id, auctor sed urna. Vestibulum ullamcorper, augue vitae congue bibendum, purus augue mattis elit, id pulvinar sem sem non purus. Quisque sit amet ultricies velit, vel pretium lorem. Donec ut purus non nisl cursus bibendum sit amet eu diam.',
       seats: 4,
       price: 29,
       airCon: true,
@@ -75,6 +85,8 @@ const initialState = {
       model: 'polo',
       category: 'eco',
       gearbox: 'manual',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ac sapien facilisis, maximus sem in, laoreet metus. In sed dui dolor. Donec in facilisis diam, vitae bibendum nisi. Nullam gravida ipsum a luctus iaculis. Nullam lectus mi, fringilla eget ornare id, auctor sed urna. Vestibulum ullamcorper, augue vitae congue bibendum, purus augue mattis elit, id pulvinar sem sem non purus. Quisque sit amet ultricies velit, vel pretium lorem. Donec ut purus non nisl cursus bibendum sit amet eu diam.',
       seats: 5,
       price: 24,
       airCon: true,
@@ -85,6 +97,8 @@ const initialState = {
       model: 'fabia',
       category: 'eco',
       gearbox: 'manual',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ac sapien facilisis, maximus sem in, laoreet metus. In sed dui dolor. Donec in facilisis diam, vitae bibendum nisi. Nullam gravida ipsum a luctus iaculis. Nullam lectus mi, fringilla eget ornare id, auctor sed urna. Vestibulum ullamcorper, augue vitae congue bibendum, purus augue mattis elit, id pulvinar sem sem non purus. Quisque sit amet ultricies velit, vel pretium lorem. Donec ut purus non nisl cursus bibendum sit amet eu diam.',
       seats: 5,
       price: 35,
       airCon: true,
@@ -95,6 +109,8 @@ const initialState = {
       model: 'tiguan',
       category: 'standard',
       gearbox: 'manual',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ac sapien facilisis, maximus sem in, laoreet metus. In sed dui dolor. Donec in facilisis diam, vitae bibendum nisi. Nullam gravida ipsum a luctus iaculis. Nullam lectus mi, fringilla eget ornare id, auctor sed urna. Vestibulum ullamcorper, augue vitae congue bibendum, purus augue mattis elit, id pulvinar sem sem non purus. Quisque sit amet ultricies velit, vel pretium lorem. Donec ut purus non nisl cursus bibendum sit amet eu diam.',
       seats: 5,
       price: 40,
       airCon: true,
@@ -105,6 +121,8 @@ const initialState = {
       model: 'corsa',
       category: 'eco',
       gearbox: 'manual',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ac sapien facilisis, maximus sem in, laoreet metus. In sed dui dolor. Donec in facilisis diam, vitae bibendum nisi. Nullam gravida ipsum a luctus iaculis. Nullam lectus mi, fringilla eget ornare id, auctor sed urna. Vestibulum ullamcorper, augue vitae congue bibendum, purus augue mattis elit, id pulvinar sem sem non purus. Quisque sit amet ultricies velit, vel pretium lorem. Donec ut purus non nisl cursus bibendum sit amet eu diam.',
       seats: 5,
       price: 33,
       airCon: false,
@@ -115,6 +133,8 @@ const initialState = {
       model: 'a-class',
       category: 'premium',
       gearbox: 'automatic',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ac sapien facilisis, maximus sem in, laoreet metus. In sed dui dolor. Donec in facilisis diam, vitae bibendum nisi. Nullam gravida ipsum a luctus iaculis. Nullam lectus mi, fringilla eget ornare id, auctor sed urna. Vestibulum ullamcorper, augue vitae congue bibendum, purus augue mattis elit, id pulvinar sem sem non purus. Quisque sit amet ultricies velit, vel pretium lorem. Donec ut purus non nisl cursus bibendum sit amet eu diam.',
       seats: 5,
       price: 60,
       airCon: true,
@@ -125,6 +145,8 @@ const initialState = {
       model: 'arteon',
       category: 'premium',
       gearbox: 'automatic',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ac sapien facilisis, maximus sem in, laoreet metus. In sed dui dolor. Donec in facilisis diam, vitae bibendum nisi. Nullam gravida ipsum a luctus iaculis. Nullam lectus mi, fringilla eget ornare id, auctor sed urna. Vestibulum ullamcorper, augue vitae congue bibendum, purus augue mattis elit, id pulvinar sem sem non purus. Quisque sit amet ultricies velit, vel pretium lorem. Donec ut purus non nisl cursus bibendum sit amet eu diam.',
       seats: 4,
       price: 33,
       airCon: true,
@@ -135,6 +157,8 @@ const initialState = {
       model: 'series-3',
       category: 'premium',
       gearbox: 'automatic',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ac sapien facilisis, maximus sem in, laoreet metus. In sed dui dolor. Donec in facilisis diam, vitae bibendum nisi. Nullam gravida ipsum a luctus iaculis. Nullam lectus mi, fringilla eget ornare id, auctor sed urna. Vestibulum ullamcorper, augue vitae congue bibendum, purus augue mattis elit, id pulvinar sem sem non purus. Quisque sit amet ultricies velit, vel pretium lorem. Donec ut purus non nisl cursus bibendum sit amet eu diam.',
       seats: 5,
       price: 37,
       airCon: true,
@@ -145,6 +169,8 @@ const initialState = {
       model: 'glc',
       category: 'premium',
       gearbox: 'automatic',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ac sapien facilisis, maximus sem in, laoreet metus. In sed dui dolor. Donec in facilisis diam, vitae bibendum nisi. Nullam gravida ipsum a luctus iaculis. Nullam lectus mi, fringilla eget ornare id, auctor sed urna. Vestibulum ullamcorper, augue vitae congue bibendum, purus augue mattis elit, id pulvinar sem sem non purus. Quisque sit amet ultricies velit, vel pretium lorem. Donec ut purus non nisl cursus bibendum sit amet eu diam.',
       seats: 5,
       price: 72,
       airCon: true,
@@ -155,6 +181,8 @@ const initialState = {
       model: 'a4',
       category: 'premium',
       gearbox: 'automatic',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ac sapien facilisis, maximus sem in, laoreet metus. In sed dui dolor. Donec in facilisis diam, vitae bibendum nisi. Nullam gravida ipsum a luctus iaculis. Nullam lectus mi, fringilla eget ornare id, auctor sed urna. Vestibulum ullamcorper, augue vitae congue bibendum, purus augue mattis elit, id pulvinar sem sem non purus. Quisque sit amet ultricies velit, vel pretium lorem. Donec ut purus non nisl cursus bibendum sit amet eu diam.',
       seats: 5,
       price: 83,
       airCon: true,
@@ -165,6 +193,8 @@ const initialState = {
       model: 'megane',
       category: 'compact',
       gearbox: 'manual',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ac sapien facilisis, maximus sem in, laoreet metus. In sed dui dolor. Donec in facilisis diam, vitae bibendum nisi. Nullam gravida ipsum a luctus iaculis. Nullam lectus mi, fringilla eget ornare id, auctor sed urna. Vestibulum ullamcorper, augue vitae congue bibendum, purus augue mattis elit, id pulvinar sem sem non purus. Quisque sit amet ultricies velit, vel pretium lorem. Donec ut purus non nisl cursus bibendum sit amet eu diam.',
       seats: 5,
       price: 24,
       airCon: true,
@@ -175,6 +205,8 @@ const initialState = {
       model: 'golf',
       category: 'compact',
       gearbox: 'manual',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ac sapien facilisis, maximus sem in, laoreet metus. In sed dui dolor. Donec in facilisis diam, vitae bibendum nisi. Nullam gravida ipsum a luctus iaculis. Nullam lectus mi, fringilla eget ornare id, auctor sed urna. Vestibulum ullamcorper, augue vitae congue bibendum, purus augue mattis elit, id pulvinar sem sem non purus. Quisque sit amet ultricies velit, vel pretium lorem. Donec ut purus non nisl cursus bibendum sit amet eu diam.',
       seats: 5,
       price: 23,
       airCon: true,
@@ -185,6 +217,8 @@ const initialState = {
       model: 'rapid',
       category: 'compact',
       gearbox: 'manual',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ac sapien facilisis, maximus sem in, laoreet metus. In sed dui dolor. Donec in facilisis diam, vitae bibendum nisi. Nullam gravida ipsum a luctus iaculis. Nullam lectus mi, fringilla eget ornare id, auctor sed urna. Vestibulum ullamcorper, augue vitae congue bibendum, purus augue mattis elit, id pulvinar sem sem non purus. Quisque sit amet ultricies velit, vel pretium lorem. Donec ut purus non nisl cursus bibendum sit amet eu diam.',
       seats: 5,
       price: 31,
       airCon: true,
@@ -195,6 +229,8 @@ const initialState = {
       model: 'scala',
       category: 'compact',
       gearbox: 'automatic',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ac sapien facilisis, maximus sem in, laoreet metus. In sed dui dolor. Donec in facilisis diam, vitae bibendum nisi. Nullam gravida ipsum a luctus iaculis. Nullam lectus mi, fringilla eget ornare id, auctor sed urna. Vestibulum ullamcorper, augue vitae congue bibendum, purus augue mattis elit, id pulvinar sem sem non purus. Quisque sit amet ultricies velit, vel pretium lorem. Donec ut purus non nisl cursus bibendum sit amet eu diam.',
       seats: 5,
       price: 30,
       airCon: true,
@@ -205,6 +241,8 @@ const initialState = {
       model: 'troc',
       category: 'compact',
       gearbox: 'automatic',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ac sapien facilisis, maximus sem in, laoreet metus. In sed dui dolor. Donec in facilisis diam, vitae bibendum nisi. Nullam gravida ipsum a luctus iaculis. Nullam lectus mi, fringilla eget ornare id, auctor sed urna. Vestibulum ullamcorper, augue vitae congue bibendum, purus augue mattis elit, id pulvinar sem sem non purus. Quisque sit amet ultricies velit, vel pretium lorem. Donec ut purus non nisl cursus bibendum sit amet eu diam.',
       seats: 5,
       price: 36,
       airCon: true,
@@ -215,6 +253,8 @@ const initialState = {
       model: 'civic',
       category: 'compact',
       gearbox: 'manual',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ac sapien facilisis, maximus sem in, laoreet metus. In sed dui dolor. Donec in facilisis diam, vitae bibendum nisi. Nullam gravida ipsum a luctus iaculis. Nullam lectus mi, fringilla eget ornare id, auctor sed urna. Vestibulum ullamcorper, augue vitae congue bibendum, purus augue mattis elit, id pulvinar sem sem non purus. Quisque sit amet ultricies velit, vel pretium lorem. Donec ut purus non nisl cursus bibendum sit amet eu diam.',
       seats: 5,
       price: 28,
       airCon: true,
@@ -225,6 +265,8 @@ const initialState = {
       model: 'jazz',
       category: 'compact',
       gearbox: 'manual',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ac sapien facilisis, maximus sem in, laoreet metus. In sed dui dolor. Donec in facilisis diam, vitae bibendum nisi. Nullam gravida ipsum a luctus iaculis. Nullam lectus mi, fringilla eget ornare id, auctor sed urna. Vestibulum ullamcorper, augue vitae congue bibendum, purus augue mattis elit, id pulvinar sem sem non purus. Quisque sit amet ultricies velit, vel pretium lorem. Donec ut purus non nisl cursus bibendum sit amet eu diam.',
       seats: 5,
       price: 22,
       airCon: true,
@@ -235,6 +277,8 @@ const initialState = {
       model: 'fit',
       category: 'mini',
       gearbox: 'manual',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ac sapien facilisis, maximus sem in, laoreet metus. In sed dui dolor. Donec in facilisis diam, vitae bibendum nisi. Nullam gravida ipsum a luctus iaculis. Nullam lectus mi, fringilla eget ornare id, auctor sed urna. Vestibulum ullamcorper, augue vitae congue bibendum, purus augue mattis elit, id pulvinar sem sem non purus. Quisque sit amet ultricies velit, vel pretium lorem. Donec ut purus non nisl cursus bibendum sit amet eu diam.',
       seats: 5,
       price: 20,
       airCon: true,
@@ -245,6 +289,8 @@ const initialState = {
       model: 'a3-sportback',
       category: 'compact',
       gearbox: 'manual',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ac sapien facilisis, maximus sem in, laoreet metus. In sed dui dolor. Donec in facilisis diam, vitae bibendum nisi. Nullam gravida ipsum a luctus iaculis. Nullam lectus mi, fringilla eget ornare id, auctor sed urna. Vestibulum ullamcorper, augue vitae congue bibendum, purus augue mattis elit, id pulvinar sem sem non purus. Quisque sit amet ultricies velit, vel pretium lorem. Donec ut purus non nisl cursus bibendum sit amet eu diam.',
       seats: 5,
       price: 43,
       airCon: true,
@@ -255,6 +301,8 @@ const initialState = {
       model: 'passat',
       category: 'standard',
       gearbox: 'manual',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ac sapien facilisis, maximus sem in, laoreet metus. In sed dui dolor. Donec in facilisis diam, vitae bibendum nisi. Nullam gravida ipsum a luctus iaculis. Nullam lectus mi, fringilla eget ornare id, auctor sed urna. Vestibulum ullamcorper, augue vitae congue bibendum, purus augue mattis elit, id pulvinar sem sem non purus. Quisque sit amet ultricies velit, vel pretium lorem. Donec ut purus non nisl cursus bibendum sit amet eu diam.',
       seats: 5,
       price: 35,
       airCon: true,
@@ -265,15 +313,27 @@ const initialState = {
       model: 'octavia',
       category: 'standard',
       gearbox: 'manual',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ac sapien facilisis, maximus sem in, laoreet metus. In sed dui dolor. Donec in facilisis diam, vitae bibendum nisi. Nullam gravida ipsum a luctus iaculis. Nullam lectus mi, fringilla eget ornare id, auctor sed urna. Vestibulum ullamcorper, augue vitae congue bibendum, purus augue mattis elit, id pulvinar sem sem non purus. Quisque sit amet ultricies velit, vel pretium lorem. Donec ut purus non nisl cursus bibendum sit amet eu diam.',
       seats: 5,
       price: 35,
       airCon: true,
     },
   ],
-  cart: {
-    products: [],
-  },
-  orders: {},
+  cart: [
+    {
+      id: 'skoda-octavia',
+      brand: 'skoda',
+      model: 'octavia',
+      category: 'standard',
+      gearbox: 'manual',
+      seats: 5,
+      price: 35,
+      airCon: true,
+      totalPrice: 105,
+      days: 3,
+    },
+  ],
 };
 
 export default initialState;

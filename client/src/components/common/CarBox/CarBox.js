@@ -13,12 +13,23 @@ const CarBox = ({
   brand,
   model,
   gearbox,
+  description,
   price,
   seats,
   category,
   airCon,
 }) => {
-  const props = { id, brand, model, gearbox, price, seats, category, airCon };
+  const props = {
+    id,
+    brand,
+    model,
+    gearbox,
+    description,
+    price,
+    seats,
+    category,
+    airCon,
+  };
   const [showPopup, setShowPopup] = useState(false);
   const [popup, setPopup] = useState(true);
 
@@ -47,7 +58,7 @@ const CarBox = ({
               <h5>{model}</h5>
             </Link>
           </div>
-          <button onClick={openPopup}>Quick View</button>
+          {popup && <button onClick={openPopup}>Quick View</button>}
         </div>
         <Link to={`car/${id}`}>
           <img

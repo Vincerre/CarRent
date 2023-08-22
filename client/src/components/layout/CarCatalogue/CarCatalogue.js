@@ -14,8 +14,6 @@ const CarCatalogue = () => {
   const cars = useSelector(getAllCars);
   const categories = useSelector(getAllCategories);
 
-  console.log(cars);
-
   const [itemsPerRow, setItemsPerRow] = useState(3);
   const [activePage, setActivePage] = useState(0);
   const [activeCategory, setActiveCategory] = useState('all');

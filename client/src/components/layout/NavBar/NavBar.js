@@ -2,7 +2,11 @@ import styles from './NavBar.module.scss';
 
 import logo from '../../../assets/logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser, faLock, faBars } from '@fortawesome/free-solid-svg-icons';
+import {
+  faUser,
+  faLock,
+  faShoppingBasket,
+} from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 
 const NavBar = () => (
@@ -12,18 +16,17 @@ const NavBar = () => (
         <img src={logo} alt="logo" />
       </Link>
       <div className={styles.links}>
-        <a href="/login">
-          {' '}
+        <Link to="/login">
           <FontAwesomeIcon className={styles.icon} icon={faUser} />
           <span className={styles.text}>Login</span>
-        </a>
-        <a href="/register">
+        </Link>
+        <Link to="/register">
           <FontAwesomeIcon className={styles.icon} icon={faLock} />
           <span className={styles.text}>Register</span>
-        </a>
-        <a href="#">
-          <FontAwesomeIcon className={styles.icon} icon={faBars} />
-        </a>
+        </Link>
+        <Link to="/cart">
+          <FontAwesomeIcon className={styles.icon} icon={faShoppingBasket} />
+        </Link>
       </div>
     </div>
   </div>

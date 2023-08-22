@@ -1,32 +1,21 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router';
 import styles from './CarPopup.module.scss';
+import { addCarToCart } from '../../../redux/cartRedux';
 
 import Button from '../../common/Button/Button';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  faAngleLeft,
-  faAngleRight,
-  faExpandAlt,
-  faExchangeAlt,
-  faShoppingBasket,
   faMinus,
   faPlus,
   faTimes,
   faGear,
   faPerson,
-  faDollar,
   faCar,
   faSnowflake,
 } from '@fortawesome/free-solid-svg-icons';
-import {
-  faFacebookF,
-  faGooglePlusG,
-  faTwitter,
-  faPinterestP,
-  faLinkedinIn,
-} from '@fortawesome/free-brands-svg-icons';
-import { faHeart, faEnvelope } from '@fortawesome/free-regular-svg-icons';
 
 const CarPopup = ({
   id,
@@ -35,14 +24,34 @@ const CarPopup = ({
   category,
   model,
   gearbox,
+  description,
   price,
   seats,
   airCon,
 }) => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [days, setDays] = useState(1);
-  console.log(days);
-
   let totalPrice = price * days;
+
+  const car = {
+    id,
+    brand,
+    category,
+    model,
+    gearbox,
+    description,
+    price,
+    seats,
+    airCon,
+    days,
+    totalPrice,
+  };
+
+  const addToCart = (payload) => {
+    dispatch(addCarToCart({ ...car }));
+    navigate('/cart');
+  };
 
   const addDays = () => {
     setDays((prev) => prev + 1);
@@ -100,7 +109,7 @@ const CarPopup = ({
                   </div>
                   <div className={styles.box}>
                     <div className={styles.icon}>
-                      <FontAwesomeIcon icon={faPerson} />
+                      <FontAwesomeIcon icon={faSnowflake} />
                       <span>Air Condition:</span>
                     </div>
                     {airCon === true ? <div>Yes</div> : <div>No</div>}
@@ -110,17 +119,7 @@ const CarPopup = ({
               <div className={styles.rightColumn}>
                 <div className={styles.description}>
                   <h3>Details</h3>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Etiam ac sapien facilisis, maximus sem in, laoreet metus. In
-                    sed dui dolor. Donec in facilisis diam, vitae bibendum nisi.
-                    Nullam gravida ipsum a luctus iaculis. Nullam lectus mi,
-                    fringilla eget ornare id, auctor sed urna. Vestibulum
-                    ullamcorper, augue vitae congue bibendum, purus augue mattis
-                    elit, id pulvinar sem sem non purus. Quisque sit amet
-                    ultricies velit, vel pretium lorem. Donec ut purus non nisl
-                    cursus bibendum sit amet eu diam.
-                  </p>
+                  <p>{description}</p>
                 </div>
                 <div className={styles.priceBox}>
                   <div className={styles.daysPicker}>
@@ -137,11 +136,10 @@ const CarPopup = ({
                   </div>
                   <div className={styles.price}>
                     <h5>Total price:</h5>
-                    {totalPrice}
-                    <FontAwesomeIcon icon={faDollar} />
+                    {totalPrice}$
                   </div>
                   <div className={styles.addToCart}>
-                    <Button>Add to Cart</Button>
+                    <Button onClick={addToCart}>Add to Cart</Button>
                   </div>
                 </div>
               </div>
