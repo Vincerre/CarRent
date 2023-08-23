@@ -290,7 +290,6 @@ function getOrders() {
       lastName: 'sdafasdf',
       message: 'fasdfasdfasd',
       phone: 516435786,
-      days: 5,
       street: 'fasdfasdf',
       totalCost: 190,
       carId: 'c920c7b9-a67d-4edb-8ce7-e3c9f3889e56',
