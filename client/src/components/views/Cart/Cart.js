@@ -4,13 +4,19 @@ import { getCart } from '../../../redux/cartRedux';
 import CartCar from '../../features/CartCar/CartCar';
 import OrderSummary from '../../features/OrderSummary/OrderSummary';
 import Button from '../../common/Button/Button';
+import { useEffect } from 'react';
+
+import { useState } from 'react';
 
 const Cart = () => {
   const cart = useSelector(getCart);
+  const [items, setItems] = useState([]);
 
-  localStorage.setItem('cart', JSON.stringify(cart));
+  useEffect(() => {
+    localStorage.setItem('items', JSON.stringify(items));
+  }, [items]);
+
   const cartProducts = JSON.parse(localStorage.getItem('cart'));
-  console.log(cartProducts);
 
   return (
     <div className="container-fluid justify-content-center">
