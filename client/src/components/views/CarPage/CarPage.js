@@ -23,13 +23,14 @@ const CarPage = () => {
   const navigate = useNavigate();
   const { carId } = useParams();
   const car = useSelector((state) => getCarById(state, carId));
+  console.log(car);
 
   const [days, setDays] = useState(1);
   const [totalPrice, setTotalPrice] = useState(car[0].price);
 
   useEffect(() => {
     setTotalPrice(car[0].price * days);
-  }, [days]);
+  }, [days, car]);
 
   const addToCart = (payload) => {
     dispatch(addCarToCart({ ...car[0], days, totalPrice }));

@@ -1,0 +1,44 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Car {
+  id          String  @id @default(uuid())
+  brand       String
+  model       String
+  category    String
+  gearbox     String
+  description String
+  seats       Int
+  price       Int
+  airCon      Boolean
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  orders    Order[]
+}
+
+model Order {
+  id        String @id @default(uuid())
+  firstName String
+  lastName  String
+  days      Int
+  message   String
+  phone     Int
+  street    String
+  totalCost Int
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  carId String
+  order Car    @relation(fields: [carId], references: [id])
+}

@@ -1,10 +1,12 @@
 import { memoize } from 'proxy-memoize';
+import { v4 as uuidv4 } from 'uuid';
 
 //SECTION selectors
 export const getCart = ({ cart }) => cart;
 export const getTotalPrice = memoize((state) =>
   state.cart.map((car) => car.totalPrice)
 );
+export const getCarsIds = memoize((state) => state.cart.map((car) => car.id));
 
 //SECTION action name creators
 const reducerName = 'cart';
@@ -29,7 +31,7 @@ export const updateCartProduct = (payload) => ({
 export default function reducer(statePart = [], action = {}) {
   switch (action.type) {
     case ADD_PRODUCT: {
-      return [...statePart, { ...action.payload }];
+      return [...statePart, { ...action.payload, id: uuidv4() }];
     }
     case REMOVE_PRODUCT: {
       return [...statePart.filter((car) => car.id !== action.payload)];
@@ -37,7 +39,10 @@ export default function reducer(statePart = [], action = {}) {
     case UPDATE_PRODUCT: {
       return statePart.map((car) =>
         car.id === action.payload.id
-          ? { ...car, totalPrice: action.payload.totalCost }
+          ? {
+              ...car,
+              totalPrice: action.payload.totalCost,
+            }
           : car
       );
     }

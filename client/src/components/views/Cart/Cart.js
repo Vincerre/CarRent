@@ -3,12 +3,14 @@ import { getCart } from '../../../redux/cartRedux';
 
 import CartCar from '../../features/CartCar/CartCar';
 import OrderSummary from '../../features/OrderSummary/OrderSummary';
+import Button from '../../common/Button/Button';
 
 const Cart = () => {
   const cart = useSelector(getCart);
+  console.log(cart);
 
   return (
-    <div>
+    <div className="d-flex flex-column align-items-center">
       <h1 className="text-center m-4">Your Cart</h1>
       <>
         {cart.length === 0 ? (
@@ -20,7 +22,10 @@ const Cart = () => {
                 <CartCar {...car} />
               </div>
             ))}
-            <OrderSummary />
+            <div className="row m-4 text-center w-50">
+              <OrderSummary />
+              <Button to={'/cart/checkout'}>Checkout</Button>
+            </div>
           </>
         )}
       </>

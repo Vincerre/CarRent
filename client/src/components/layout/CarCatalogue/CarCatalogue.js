@@ -13,7 +13,6 @@ import { faArrowRight, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 const CarCatalogue = () => {
   const cars = useSelector(getAllCars);
   const categories = useSelector(getAllCategories);
-
   const [itemsPerRow, setItemsPerRow] = useState(3);
   const [activePage, setActivePage] = useState(0);
   const [activeCategory, setActiveCategory] = useState('all');
