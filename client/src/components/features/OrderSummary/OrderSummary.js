@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux/es/hooks/useSelector';
 import { getTotalPrice } from '../../../redux/cartRedux';
 
-const OrderSummary = () => {
+const OrderSummary = ({ totalPrice }) => {
   const arr = useSelector(getTotalPrice);
 
   let sum = 0;
@@ -14,7 +14,7 @@ const OrderSummary = () => {
     <div className="text-center m-4">
       <div className="m-4">
         <h2>Order summary</h2>
-        <h2>{sum}$</h2>
+        <h2>{totalPrice}$</h2>
       </div>
     </div>
   );

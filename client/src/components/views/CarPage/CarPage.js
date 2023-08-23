@@ -33,6 +33,7 @@ const CarPage = () => {
 
   const addToCart = (payload) => {
     dispatch(addCarToCart({ ...car[0], days, totalPrice }));
+
     navigate('/cart');
   };
 
