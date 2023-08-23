@@ -47,7 +47,7 @@ const CartCar = ({ id, brand, model, price, days, totalPrice }) => {
             src={process.env.PUBLIC_URL + `/images/cars/${brand}-${model}.png`}
           />
         </div>
-        <div className="">
+        <div>
           <div className={`w-100 d-flex align-items-center ${styles.sum}`}>
             <div>
               <h5>Days</h5>
