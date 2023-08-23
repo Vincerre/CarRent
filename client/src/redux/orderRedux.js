@@ -21,7 +21,6 @@ export const addOrderRequest = (order) => {
       method: 'POST',
       headers: {
         Accept: 'application/json, text/plain, */*',
-
         'Content-type': 'application/json; charset = UTF-8',
       },
       body: JSON.stringify(order),
