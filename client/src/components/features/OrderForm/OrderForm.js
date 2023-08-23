@@ -11,7 +11,7 @@ import Button from '../../common/Button/Button';
 import { addOrderRequest } from '../../../redux/orderRedux';
 import { getCarsIds, getTotalPrice } from '../../../redux/cartRedux';
 
-const OrderForm = () => {
+const OrderForm = ({ days }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -23,7 +23,6 @@ const OrderForm = () => {
 
   const arr = useSelector(getTotalPrice);
   const carsIds = useSelector(getCarsIds);
-  console.log(carsIds);
 
   let totalCost = 0;
   arr.map((item) => {
@@ -46,8 +45,8 @@ const OrderForm = () => {
         phone,
         message,
         totalCost,
-        carId: carsIds,
-      })
+        carId: carsIds[0],
+      }),
     );
 
     navigate('/order/sent');

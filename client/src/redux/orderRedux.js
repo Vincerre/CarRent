@@ -1,5 +1,6 @@
 import { v4 as uuidv4 } from 'uuid';
 import { API_URL } from '../config';
+import axios from 'axios';
 
 //SECTION - selectors
 export const getAllOrders = ({ orders }) => orders;
@@ -19,13 +20,15 @@ export const addOrderRequest = (order) => {
     const options = {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json',
+        Accept: 'application/json, text/plain, */*',
+
+        'Content-type': 'application/json; charset = UTF-8',
       },
       body: JSON.stringify(order),
     };
-    fetch(`${API_URL}/api/orders`, options).then(() =>
-      dispatch(addOrder(order))
-    );
+    fetch(`${API_URL}/api/orders`, options).then(() => {
+      dispatch(addOrder(order));
+    });
   };
 };
 

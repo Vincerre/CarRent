@@ -23,7 +23,6 @@ const CarCatalogue = () => {
   const [fade, setFade] = useState(false);
   const [rows, setRows] = useState(2);
   const [cars, setCars] = useState([]);
-  console.log(cars);
 
   const dispatch = useDispatch();
 
@@ -38,9 +37,7 @@ const CarCatalogue = () => {
 
   useEffect(() => {
     fetchCars();
-  }, [dispatch]);
-
-  console.log(cars);
+  }, []);
 
   const categoryCars = cars.filter((car) => car.category === activeCategory);
   let pagesCount = 0;

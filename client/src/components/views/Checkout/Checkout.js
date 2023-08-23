@@ -15,7 +15,7 @@ const Checkout = () => {
           <Orders {...car} />
         </div>
       ))}
-      <OrderForm {...cart} />
+      <OrderForm />
       <OrderSummary />
     </div>
   );

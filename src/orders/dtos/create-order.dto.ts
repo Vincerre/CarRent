@@ -42,12 +42,6 @@ export class CreateOrderDTO {
   @Length(3, 100)
   street: string;
 
-  @Min(1)
-  @IsNotEmpty()
-  @Transform(({ value }) => parseInt(value))
-  @IsInt()
-  days: number;
-
   @IsNotEmpty()
   @IsInt()
   @Transform(({ value }) => parseInt(value))

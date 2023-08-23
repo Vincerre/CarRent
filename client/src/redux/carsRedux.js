@@ -5,6 +5,7 @@ import axios from 'axios';
 export const getAllCars = ({ cars }) => cars.cars;
 export const getCarById = ({ cars }, id) =>
   cars.cars.filter((car) => car.id === id);
+
 export const getRequest = ({ request }) => request;
 
 //SECTION actions

@@ -7,7 +7,6 @@ import Button from '../../common/Button/Button';
 
 const Cart = () => {
   const cart = useSelector(getCart);
-  console.log(cart);
 
   return (
     <div className="d-flex flex-column align-items-center">
