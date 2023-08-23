@@ -39,15 +39,16 @@ const CartCar = ({ id, brand, model, price, days, totalPrice }) => {
 
   return (
     <div className={styles.root}>
-      <div className={`container ${styles.container}`}>
+      <div className={`p-3 ${styles.container}`}>
         <div>
           <img
+            className="w-100"
             alt={id}
             src={process.env.PUBLIC_URL + `/images/cars/${brand}-${model}.png`}
           />
         </div>
-        <div>
-          <div className={styles.sum}>
+        <div className="">
+          <div className={`w-100 d-flex align-items-center ${styles.sum}`}>
             <div>
               <h5>Days</h5>
             </div>

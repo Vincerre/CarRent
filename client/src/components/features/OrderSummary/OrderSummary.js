@@ -11,8 +11,8 @@ const OrderSummary = () => {
   });
 
   return (
-    <div className="text-center">
-      <div className="row m-5">
+    <div className="text-center m-4">
+      <div className="m-4">
         <h2>Order summary</h2>
         <h2>{sum}$</h2>
       </div>

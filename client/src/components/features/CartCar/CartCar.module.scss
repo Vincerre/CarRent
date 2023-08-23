@@ -24,11 +24,9 @@
       margin-right: 2rem;
     }
     .sum{
-      display: flex;
-      justify-content: center;
-      align-items: center;
       h5{
         font-size: 28px;
+        text-align: center;
       }
 
       >div{
@@ -68,13 +66,17 @@
 }
 }
 
-@media (max-width: 440px){
+@media (max-width: 500px){
   .root{
   .container{
     .sum{
       padding: 0 10px;
+      flex-direction: column;
+      > div {
+        margin: 10px;
+      }
       h5{
-        font-size: 24px;
+        font-size: 20px;
       }
       .price{
         h5{

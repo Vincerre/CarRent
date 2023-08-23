@@ -9,7 +9,7 @@ const Cart = () => {
   const cart = useSelector(getCart);
 
   return (
-    <div className="d-flex flex-column align-items-center">
+    <div className="container-fluid justify-content-center">
       <h1 className="text-center m-4">Your Cart</h1>
       <>
         {cart.length === 0 ? (
@@ -21,7 +21,7 @@ const Cart = () => {
                 <CartCar {...car} />
               </div>
             ))}
-            <div className="row m-4 text-center w-50">
+            <div className="m-4 p-4 text-center">
               <OrderSummary />
               <Button to={'/cart/checkout'}>Checkout</Button>
             </div>
