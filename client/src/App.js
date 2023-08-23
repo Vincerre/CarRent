@@ -13,20 +13,7 @@ import Login from './components/features/Login/Login';
 import Register from './components/features/Register/Register';
 import OrderSentPage from './components/views/OrderSentPage/OrderSentPage';
 
-import { loadCars } from './redux/carsRedux';
-
 const App = () => {
-  const dispatch = useDispatch();
-
-  const fetchCars = () => {
-    fetch('http://localhost:3000/api/cars')
-      .then((res) => res.json())
-      .then((cars) => dispatch(loadCars(cars)))
-      .then((cars) => console.log(cars));
-  };
-
-  useEffect(fetchCars, []);
-
   return (
     <>
       <NavBar />

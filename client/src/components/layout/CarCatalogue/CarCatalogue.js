@@ -10,8 +10,11 @@ import CarBox from '../../common/CarBox/CarBox';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
+import { useDispatch } from 'react-redux';
+import { loadCars } from '../../../redux/carsRedux';
+import { API_URL } from '../../../config';
+
 const CarCatalogue = () => {
-  const cars = useSelector(getAllCars);
   const categories = useSelector(getAllCategories);
   const [itemsPerRow, setItemsPerRow] = useState(3);
   const [activePage, setActivePage] = useState(0);
@@ -19,6 +22,25 @@ const CarCatalogue = () => {
   const [viewport, setViewport] = useState(window.innerWidth);
   const [fade, setFade] = useState(false);
   const [rows, setRows] = useState(2);
+  const [cars, setCars] = useState([]);
+  console.log(cars);
+
+  const dispatch = useDispatch();
+
+  const fetchCars = () => {
+    fetch(`${API_URL}/api/cars`)
+      .then((res) => res.json())
+      .then((res) => {
+        setCars(res);
+        dispatch(loadCars(res));
+      });
+  };
+
+  useEffect(() => {
+    fetchCars();
+  }, [dispatch]);
+
+  console.log(cars);
 
   const categoryCars = cars.filter((car) => car.category === activeCategory);
   let pagesCount = 0;
@@ -86,10 +108,11 @@ const CarCatalogue = () => {
       <li key={i}>
         <button
           onClick={() => handlePageChange(i)}
-          className={i === activePage ? styles.active : ''}>
+          className={i === activePage ? styles.active : ''}
+        >
           Page {i}
         </button>
-      </li>
+      </li>,
     );
   }
 
@@ -110,7 +133,8 @@ const CarCatalogue = () => {
                         className={
                           item.id === activeCategory ? styles.active : ''
                         }
-                        onClick={() => handleCategoryChange(item.id)}>
+                        onClick={() => handleCategoryChange(item.id)}
+                      >
                         {item.name}
                       </a>
                     </li>
@@ -126,7 +150,8 @@ const CarCatalogue = () => {
             <div
               className={`${fade ? styles['fade-out'] : ''} ${
                 styles['products-view']
-              } row`}>
+              } row`}
+            >
               {dots.length > 1 && (
                 <>
                   <button className={styles.rightArrow} onClick={nextPage}>
@@ -140,7 +165,7 @@ const CarCatalogue = () => {
               {cars
                 .slice(
                   activePage * itemsPerRow * rows,
-                  (activePage + 1) * itemsPerRow * rows
+                  (activePage + 1) * itemsPerRow * rows,
                 )
                 .map((item) => (
                   <div key={item.id} className={`col-${12 / itemsPerRow}`}>
@@ -152,7 +177,8 @@ const CarCatalogue = () => {
             <div
               className={`${fade ? styles['fade-out'] : ''} ${
                 styles['products-view']
-              } row`}>
+              } row`}
+            >
               {dots.length > 1 && (
                 <>
                   <button className={styles.rightArrow} onClick={nextPage}>
@@ -166,7 +192,7 @@ const CarCatalogue = () => {
               {categoryCars
                 .slice(
                   activePage * itemsPerRow * rows,
-                  (activePage + 1) * itemsPerRow * rows
+                  (activePage + 1) * itemsPerRow * rows,
                 )
                 .map((item) => (
                   <div key={item.id} className={`col-${12 / itemsPerRow}`}>

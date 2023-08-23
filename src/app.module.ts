@@ -20,7 +20,7 @@ import { join } from 'path';
   imports: [
     CarsModule,
     ServeStaticModule.forRoot({
-      rootPath: join(__dirname, '..', 'client'),
+      rootPath: join(__dirname, '../../', 'client', 'build'),
     }),
     ConfigModule.forRoot({
       load: [configuration],

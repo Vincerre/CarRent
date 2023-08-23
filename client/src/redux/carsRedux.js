@@ -1,3 +1,6 @@
+import { API_URL } from '../config';
+import axios from 'axios';
+
 //SECTION selectors
 export const getAllCars = ({ cars }) => cars.cars;
 export const getCarById = ({ cars }, id) =>
@@ -28,7 +31,7 @@ export default function reducer(statePart = [], action = {}) {
       return { ...statePart, cars: [...statePart.cars, { ...action.payload }] };
     case EDIT_CAR:
       return statePart.cars.map((car) =>
-        car.id === action.payload.id ? { ...car, ...action.payload } : car
+        car.id === action.payload.id ? { ...car, ...action.payload } : car,
       );
     case LOAD_CARS:
       return { ...statePart, cars: [...action.payload] };
