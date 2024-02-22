@@ -92,7 +92,7 @@ const CarBox = ({
         popup &&
         createPortal(
           <CarPopup {...props} closePopup={closePopup} />,
-          document.body
+          document.body,
         )}
     </div>
   );

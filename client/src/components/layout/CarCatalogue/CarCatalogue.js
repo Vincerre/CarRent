@@ -34,10 +34,10 @@ const CarCatalogue = () => {
         dispatch(loadCars(res));
       });
   };
-
+  console.log(cars);
   useEffect(() => {
     fetchCars();
-  }, []);
+  });
 
   const categoryCars = cars.filter((car) => car.category === activeCategory);
   let pagesCount = 0;
