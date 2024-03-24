@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/static/css/main.e49ad54d.css",
-    "main.js": "/static/js/main.99d568bc.js",
+    "main.js": "/static/js/main.67b52063.js",
     "static/media/hero-car.png": "/static/media/hero-car.332de74fc6bed23b1095.png",
     "static/media/hero-car-shape.png": "/static/media/hero-car-shape.0ab724a9ea17328c4524.png",
     "index.html": "/index.html",
     "main.e49ad54d.css.map": "/static/css/main.e49ad54d.css.map",
-    "main.99d568bc.js.map": "/static/js/main.99d568bc.js.map"
+    "main.67b52063.js.map": "/static/js/main.67b52063.js.map"
   },
   "entrypoints": [
     "static/css/main.e49ad54d.css",
-    "static/js/main.99d568bc.js"
+    "static/js/main.67b52063.js"
   ]
 }
